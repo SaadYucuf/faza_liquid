@@ -1,51 +1,78 @@
-Faza Liquit - Moliyaviy Savdo Platformasi
-Bu Faza Liquit nomli moliyaviy savdo platformasining zamonaviy, sezgir (responsive) veb-ilovasi. Loyiha foydalanuvchilar uchun shaxsiy kabinet, hisoblar balansi, savdo tarixi va sozlamalarni boshqarish imkonini beradi.
-Ilova Next.js, TypeScript va Tailwind CSS kabi zamonaviy texnologiyalar yordamida qurilgan bo'lib, shadcn/ui komponentlar kutubxonasidan foydalanilgan.
-✨ Asosiy Xususiyatlari
-Xavfsiz Avtorizatsiya: Tizimga kirish sahifasi va himoyalangan marshrutlar (protected routes).
-Boshqaruv Paneli (Dashboard): Foydalanuvchi balansi, hisob ma'lumotlari va savdo operatsiyalari tarixi.
-Tranzaksiyalar Tarixi: Barcha pul o'tkazmalari (kirim va chiqim) ro'yxati.
-Profilni Boshqarish: Foydalanuvchi profili, verifikatsiya statusi va shaxsiy ma'lumotlar.
-Xavfsizlik Sozlamalari: Parolni o'zgartirish va boshqa qurilmalardan chiqish imkoniyati.
-Adaptiv Dizayn: Barcha qurilmalarda (desktop, planshet, mobil) qulay ishlash uchun to'liq moslashuvchan interfeys.
-Yorug' va Qorong'u Rejim (Light/Dark Mode): Foydalanuvchi xohishiga ko'ra mavzuni o'zgartirish imkoniyati.
-Bildirishnomalar (Toast Notifications): Tizimdagi muvaffaqiyatli yoki xatolik bilan yakunlangan amallar haqida xabarlar.
-🛠 Texnologiyalar Steki
-Freymvork: Next.js (App Router bilan)
-Til: TypeScript
-Stillashtirish: Tailwind CSS
-UI Komponentlar: shadcn/ui (Radix UI + Tailwind CSS asosida)
-Ikonkalar: Lucide React
-Holatni Boshqarish (State Management): React Hooks (useState, useContext)
-Formlar: React Hook Form
-🚀 Ishga Tushirish
-Loyihani o'z kompyuteringizda ishga tushirish uchun quyidagi amallarni bajaring:
-1. Talablar:
-Node.js (v18 yoki undan yuqori)
-pnpm (yoki npm, yarn)
-2. Loyihani yuklab olish:
-code
-Bash
-git clone https://github.com/sizning-repo- manzilingiz/faza-liquit.git
-cd faza-liquit
-3. Kerakli paketlarni o'rnatish:
-code
-Bash
-pnpm install
-4. Development serverni ishga tushirish:
-code
-Bash
-pnpm dev
-5. Brauzerda ochish:
-Endi brauzeringizda http://localhost:3000 manzilini oching va loyihani ko'rishingiz mumkin.
-🔑 Tizimga Kirish Ma'lumotlari
-Bu loyihada oddiy, client-side (brauzerda saqlanuvchi) avtorizatsiya ishlatilgan. Tizimga kirish uchun quyidagi statik ma'lumotlardan foydalaning:
-Email: dmamajanova02@gmail.com
-Parol: 271973
-📁 Loyiha Tuzilmasi
-code
-Code
-faza-liquit/
+# 🌟 Faza Liquit - Moliyaviy Savdo Platformasi
+
+Faza Liquit — zamonaviy va sezgir (responsive) moliyaviy savdo platformasining veb-ilovasi. Foydalanuvchilar uchun shaxsiy kabinet, balans nazorati, savdo tarixi va shaxsiy sozlamalarni boshqarish imkonini beradi.
+
+Ilova **Next.js**, **TypeScript** va **Tailwind CSS** texnologiyalari asosida qurilgan bo'lib, **shadcn/ui** komponentlaridan foydalanilgan.
+
+---
+
+## ✨ Asosiy Xususiyatlar
+
+- **🔐 Xavfsiz Avtorizatsiya:** Tizimga kirish sahifasi va himoyalangan marshrutlar (protected routes)
+- **📊 Boshqaruv Paneli:** Foydalanuvchi balansi, hisob ma'lumotlari va savdo tarixi
+- **💸 Tranzaksiyalar Tarixi:** Barcha pul o'tkazmalari (kirim/chiqim) ro'yxati
+- **👤 Profilni Boshqarish:** Profil, verifikatsiya statusi va shaxsiy ma'lumotlar
+- **🛡️ Xavfsizlik Sozlamalari:** Parolni o'zgartirish va boshqa qurilmalardan chiqish
+- **🖥️ Adaptiv Dizayn:** Desktop, planshet va mobil uchun to'liq moslashuvchan interfeys
+- **🌙 Yorug' va Qorong'u Rejim:** Light/Dark mode
+- **🔔 Bildirishnomalar:** Toast notifications orqali tezkor xabarlar
+
+---
+
+## 🛠 Texnologiyalar Steki
+
+| Texnologiya     | Tavsif                                      |
+| --------------- | ------------------------------------------- |
+| Next.js         | App Router bilan zamonaviy React framework  |
+| TypeScript      | Tip xavfsizligi uchun                       |
+| Tailwind CSS    | Tez va moslashuvchan UI uchun               |
+| shadcn/ui       | Radix UI + Tailwind asosidagi komponentlar  |
+| Lucide React    | Zamonaviy SVG ikonkalar                     |
+| React Hooks     | (useState, useContext) holatni boshqarish   |
+| React Hook Form | Formlar va validatsiya                      |
+
+---
+
+## 🚀 Ishga Tushirish Yo'riqnomasi
+
+1. **Talablar:**
+   - [Node.js](https://nodejs.org/) (v18+)
+   - [pnpm](https://pnpm.io/) (yoki npm/yarn)
+
+2. **Loyihani yuklab olish:**
+   ```bash
+   git clone https://github.com/SaadYucuf/faza_liquid.git
+   cd faza_liquid
+   ```
+
+3. **Kerakli paketlarni o'rnatish:**
+   ```bash
+   pnpm install
+   ```
+
+4. **Development serverni ishga tushirish:**
+   ```bash
+   pnpm dev
+   ```
+
+5. **Brauzerda ochish:**
+   - [http://localhost:3000](http://localhost:3000) manziliga o'ting.
+
+---
+
+## 🔑 Tizimga Kirish Ma'lumotlari
+
+> **Eslatma:** Bu loyiha client-side (brauzerda) avtorizatsiyadan foydalanadi. Tizimga kirish uchun quyidagilarni ishlating:
+
+- **Email:** `dmamajanova02@gmail.com`
+- **Parol:** `271973`
+
+---
+
+## 📁 Loyiha Tuzilmasi
+
+```text
+faza_liquid/
 ├── app/                  # Barcha sahifalar va marshrutlar (App Router)
 │   ├── dashboard/
 │   ├── profile/
@@ -62,5 +89,12 @@ faza-liquit/
 │   └── use-toast.ts
 ├── lib/                  # Yordamchi funksiyalar (masalan, cn)
 └── public/               # Statik fayllar (rasm, shriftlar)
-📄 Litsenziya
-Bu loyiha MIT litsenziyasi asosida tarqatiladi.
+```
+
+---
+
+## 📄 Litsenziya
+
+Bu loyiha [MIT litsenziyasi](LICENSE) asosida tarqatiladi.
+
+---
