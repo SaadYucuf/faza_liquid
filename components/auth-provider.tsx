@@ -37,10 +37,15 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
   }, [])
 
   const login = (email: string) => {
+    console.log("[v0] Setting authentication in localStorage")
     localStorage.setItem("isAuthenticated", "true")
     localStorage.setItem("userEmail", email)
+
+    console.log("[v0] Updating authentication state")
     setIsAuthenticated(true)
     setUserEmail(email)
+
+    console.log("[v0] Login function completed, isAuthenticated should be true")
   }
 
   const logout = async () => {

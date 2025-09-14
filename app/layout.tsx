@@ -13,11 +13,6 @@ const onest = Onest({
   display: "swap",
 })
 
-export const metadata: Metadata = {
-  title: "Faza Liquit",
-  description: "Financial Trading Platform",
-  generator: "v0.app",
-}
 
 export default function RootLayout({
   children,

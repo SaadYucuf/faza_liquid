@@ -6,7 +6,6 @@ import { useState } from "react"
 import Link from "next/link"
 import { usePathname } from "next/navigation"
 import { useAuth } from "./auth-provider"
-import { Button } from "@/components/ui/button"
 import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from "@/components/ui/dropdown-menu"
 import {
   ChevronDown,
@@ -191,39 +190,55 @@ export function DashboardLayout({ children }: { children: React.ReactNode }) {
                 <div className="w-2 h-2 bg-blue-600 rounded-full"></div>
               </div>
             </Link>
-            <DropdownMenu>
-              <DropdownMenuTrigger asChild>
-                <Button variant="ghost" size="sm" className="flex items-center gap-2" disabled={isLoggingOut}>
-                  <User className="h-4 w-4" />
-                  <ChevronDown className="h-4 w-4" />
-                </Button>
-              </DropdownMenuTrigger>
-              <DropdownMenuContent align="end" className="w-48">
-                <DropdownMenuItem asChild>
-                  <Link href="/profile" className="flex items-center gap-2">
+            <div className="relative">
+              <DropdownMenu>
+                <DropdownMenuTrigger asChild>
+                  <button
+                    className="flex items-center gap-2 px-3 py-2 text-sm bg-white border border-gray-200 rounded-md hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 transition-colors"
+                    onClick={() => console.log("[v0] Profile button clicked")}
+                  >
                     <User className="h-4 w-4" />
-                    Profile
-                  </Link>
-                </DropdownMenuItem>
-                <DropdownMenuItem
-                  onClick={logout}
-                  className="flex items-center gap-2 text-red-600"
-                  disabled={isLoggingOut}
+                    <ChevronDown className="h-4 w-4" />
+                  </button>
+                </DropdownMenuTrigger>
+                <DropdownMenuContent
+                  align="end"
+                  className="w-48 bg-white border border-gray-200 rounded-md shadow-lg z-50"
+                  sideOffset={5}
                 >
-                  {isLoggingOut ? (
-                    <>
-                      <Loader2 className="h-4 w-4 animate-spin" />
-                      Signing out...
-                    </>
-                  ) : (
-                    <>
-                      <LogOut className="h-4 w-4" />
-                      Sign out
-                    </>
-                  )}
-                </DropdownMenuItem>
-              </DropdownMenuContent>
-            </DropdownMenu>
+                  <DropdownMenuItem asChild>
+                    <Link
+                      href="/profile"
+                      className="flex items-center gap-2 px-3 py-2 text-sm hover:bg-gray-100 cursor-pointer"
+                      onClick={() => console.log("[v0] Profile link clicked")}
+                    >
+                      <User className="h-4 w-4" />
+                      Profile
+                    </Link>
+                  </DropdownMenuItem>
+                  <DropdownMenuItem
+                    onClick={() => {
+                      console.log("[v0] Sign out clicked")
+                      logout()
+                    }}
+                    className="flex items-center gap-2 px-3 py-2 text-sm text-red-600 hover:bg-red-50 cursor-pointer"
+                    disabled={isLoggingOut}
+                  >
+                    {isLoggingOut ? (
+                      <>
+                        <Loader2 className="h-4 w-4 animate-spin" />
+                        Signing out...
+                      </>
+                    ) : (
+                      <>
+                        <LogOut className="h-4 w-4" />
+                        Sign out
+                      </>
+                    )}
+                  </DropdownMenuItem>
+                </DropdownMenuContent>
+              </DropdownMenu>
+            </div>
           </div>
         </div>
       </header>

@@ -7,6 +7,7 @@ import { useRouter } from "next/navigation"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { useToast } from "@/hooks/use-toast"
+import { useAuth } from "@/components/auth-provider"
 import { Loader2, Mail, Lock, Eye, Globe } from "lucide-react"
 
 export default function LoginPage() {
@@ -17,6 +18,7 @@ export default function LoginPage() {
   const [isLoading, setIsLoading] = useState(false)
   const router = useRouter()
   const { toast } = useToast()
+  const { login } = useAuth()
 
   const handleSignIn = async (e: React.FormEvent) => {
     e.preventDefault()
@@ -30,16 +32,23 @@ export default function LoginPage() {
 
       // Static authentication check
       if (email === "dmamajanova02@gmail.com" && password === "271973") {
-        // Store auth state in localStorage
-        localStorage.setItem("isAuthenticated", "true")
-        localStorage.setItem("userEmail", email)
+        console.log("[v0] Login credentials valid, calling login function")
+
+        // Call login function and wait for it to complete
+        login(email)
+
+        await new Promise((resolve) => setTimeout(resolve, 100))
+
+        console.log("[v0] Login function called, showing success toast")
 
         toast({
           title: "Login Successful",
           description: "You have successfully logged into the system.",
         })
 
-        router.push("/dashboard")
+        console.log("[v0] Redirecting to dashboard")
+
+        window.location.href = "/dashboard"
       } else {
         setError("Invalid email or password")
         toast({
@@ -49,6 +58,7 @@ export default function LoginPage() {
         })
       }
     } catch (err) {
+      console.log("[v0] Login error:", err)
       toast({
         variant: "destructive",
         title: "Error",
