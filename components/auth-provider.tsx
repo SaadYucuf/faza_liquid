@@ -56,16 +56,16 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
       setUserEmail(null)
 
       toast({
-        title: "Tizimdan chiqish",
-        description: "Tizimdan muvaffaqiyatli chiqdingiz.",
+        title: "Logged Out",
+        description: "You have successfully logged out of the system.",
       })
 
-      router.push("/")
+      router.replace("/")
     } catch (error) {
       toast({
         variant: "destructive",
-        title: "Xatolik",
-        description: "Tizimdan chiqishda xatolik yuz berdi.",
+        title: "Error",
+        description: "An error occurred while logging out.",
       })
     } finally {
       setIsLoggingOut(false)
